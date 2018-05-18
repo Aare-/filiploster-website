@@ -134,7 +134,10 @@
       }
 
       .column_1 {
-        display: inline-block;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        display: block;
         vertical-align: top;        
         width: 100%;
         max-width: 450px;
@@ -143,9 +146,10 @@
 
       /* any custom styles go here. */
       .column_2{
-        display: inline-block;        
-        width: calc(100% - 455px);        
-        vertical-align: top;
+        display: block;        
+        left: 450px;
+        position: relative;
+        width: calc(100% - 455px);                
         min-width: 480px;
       }
 
@@ -205,8 +209,13 @@
         color: rgba(227,28,255,1) ;
         left: 5px;
         top: 5px;     
-        text-align: right;
+        text-align: right;        
         line-height: 360px;   
+      }
+
+      p.special_small_size {
+        font-size: 17pt;
+        line-height: 380px;   
       }
 
       .column_2 ul li p {
@@ -277,6 +286,22 @@
 
       .links li:last-child {
         border-bottom: 1px solid;
+      }
+
+      .about_me {
+        color: white;
+        position: absolute;
+        text-align: right;
+        right: 30px;
+        top: 409px;
+        width: 245px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        min-height: 180px;
+        font-size: 13pt;
+        line-height: 10pt;
       }
 
       #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
@@ -396,6 +421,22 @@
         <li><a href="mailto:filip.loster.i.synowie@gmail.com">Email</a></li>
         <!--<li><a href="tel:+48669969939">Phone</a></li> -->
       </ul>
+
+      <div class='about_me'>
+        25 year old person<br/>
+        from Krakow Poland<br/>
+        loves to create new things<br/>
+        learns how to scateboard<br/>
+        enjoys mountain hiking<br/>
+        and travelling<br/>
+        plays video games too much<br/>
+        likes rock and techno (?)<br/>
+        still watches cartoons<br/>
+        member of kurki games<br/>
+        collective.<br/>        
+        <br/>
+        Rating: ★★★★☆
+      </div>
     </div>
 
     <div class="column_2">
@@ -441,6 +482,17 @@
         <a href="http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=15039" target="_blank">
         <li><p>Bad<br/>Kitty</p></li>
         </a>
+      </ul>
+
+      <h2>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOBS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</h2>
+      <ul  class='released'>        
+          <li class='in_progress'><p class="special_small_size">Pragmatic Coders</p></li>                
+          <li><p>NetEnt</p></li>                
+          <li><p>Moonlit<br/>Games</br>Studio</p></li>        
+          <li><p>Infusion</p></li>        
+          <li><p>Submachine</br>Factory</p></li>        
+          <li><p>ATGames</p></li>        
+          <li><p>CocoLab</p></li>        
       </ul>
     </div>    
   </body>
