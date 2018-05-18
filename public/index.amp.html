@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Unhatched</title>
+    <title>Filip Loster</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
@@ -19,16 +20,327 @@
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
+
+      @keyframes Blink {
+        0% { color: white; }
+        10% { color: white; }
+        10.1% { color: transparent; }
+        100% { color: transparent; }
+      }
+
+      @keyframes AnimateRotate {
+        0% { transform: rotate(3rad); }
+        100% { transform: rotate(9.28rad); }
+      }
+
+      @keyframes FlipImages {
+        0% { background: url(img/face_1.png); background-size: 100%; }
+        15% { background: url(img/face_1.png); background-size: 100%; }
+
+        15.1% { background: url(img/face_2.png); background-size: 100%; }
+        20% { background: url(img/face_2.png); background-size: 100%; }
+
+        20.1% { background: url(img/download.png); background-size: 100%; }
+        45% { background: url(img/download.png); background-size: 100%; }
+
+        45.1% { background: url(img/face_2.png); background-size: 100%; }
+        55.0% { background: url(img/face_2.png); background-size: 100%; }
+
+        55.1% { background: url(img/face_1.png); background-size: 100%; }
+        72.0% { background: url(img/face_1.png); background-size: 100%; }
+
+        72.1% { background: url(img/face_2.png); background-size: 100%; }
+        83.0% { background: url(img/face_2.png); background-size: 100%; }
+
+        83.1% { background: url(img/download.png); background-size: 100%; }
+        95% { background: url(img/download.png); background-size: 100%; }
+
+        95.1% { background: url(img/face_2.png); background-size: 100%; }
+        100% { background: url(img/face_2.png); background-size: 100%; }
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(137deg, rgba(28,255,225,1) 22%, rgba(14,127,113,1) 100%) fixed;
+        color: #FF00D2;
+      }
+
+      a {
+        color: #BE18FF;
+      }
+
+
+      .skills {
+        list-style-type: none;
+        background: black;
+        position: absolute;
+        left: 80px;
+        top: 180px;
+        height: 30px;
+        width: 100px;
+        vertical-align: center;
+        font-weight: bold;
+      }
+
+      .skills li {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 7px;
+        left: 0px;
+        color: transparent;
+        animation: Blink 1.5s linear;
+        animation-iteration-count: infinite;
+      }
+
+      .skills li:nth-child(1) { animation-delay: 0.0s }
+      .skills li:nth-child(2) { animation-delay: 0.15s }
+      .skills li:nth-child(3) { animation-delay: 0.3s }
+      .skills li:nth-child(4) { animation-delay: 0.45s }
+      .skills li:nth-child(5) { animation-delay: 0.6s }
+      .skills li:nth-child(6) { animation-delay: 0.75s }
+      .skills li:nth-child(7) { animation-delay: 0.9s }
+      .skills li:nth-child(8) { animation-delay: 1.05s }
+      .skills li:nth-child(9) { animation-delay: 1.2s }
+      .skills li:nth-child(10) { animation-delay: 1.35s }
+
+      #portrait {
+        position: relative;
+        margin-top: 50px;
+        width: 300px;
+        height: 300px;
+        animation: FlipImages 1.5s linear;
+        animation-iteration-count: infinite;
+        background-repeat: no-repeat;
+        border-radius: 200px;
+        border: 2px solid black;
+      }
+
+      #warped {
+        font-size: 22pt;
+        position: relative;
+        display: block;
+        width:300px;
+        height:300px;
+        animation: AnimateRotate 30.0s linear;
+        animation-iteration-count: infinite;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .column_1 {
+        position: fixed;
+        left: 50px;
+        top: 0px;
+        width: 350px;
+
+        color:rgba(14,127,113,0.5);
+      }
+
       /* any custom styles go here. */
       .wrapper{
-        margin:0 auto; 
-        max-width: 900px; 
+        position: relative;
+        left: 400px;
+        width: calc(100% - 450px);
+        height: 100%;
       }
+
+      .wrapper ul {
+        list-style-type: none;
+      }
+
+      .wrapper ul li {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(118deg, rgba(227,28,255,1) 0%, rgba(2,204,148,1) 100%);
+        color: rgba(28,255,225,1);
+        font-weight: bold;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 22pt;
+        line-height: 18pt;
+        vertical-align:top
+      }
+
+      .wrapper ul li p {
+        position: relative;
+        top: 0px;
+        margin: 0 0;
+        padding:  0 0;
+      }
+
+      #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
+        -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
+      100%; -ms-transform-origin:50% 100%; transform-origin:50% 100%; }
+
+      #warped span{ line-height:0.65; white-space:pre; overflow:visible; padding:0px;}
+
+      #warped .w0 {-moz-transform: rotate(1.61rad);-webkit-transform: rotate(1.61rad);-o-transform:
+              rotate(1.61rad);-ms-transform: rotate(1.61rad); transform: rotate(1.61rad);
+        width: 12px; height: 27px; left: 293.88px; top: 128.99px;}
+
+      #warped .w1 {-moz-transform: rotate(1.7rad);-webkit-transform: rotate(1.7rad);-o-transform:
+              rotate(1.7rad);-ms-transform: rotate(1.7rad); transform: rotate(1.7rad);
+        width: 6px; height: 27px; left: 295.66px; top: 142.94px;}
+
+      #warped .w2 {-moz-transform: rotate(1.88rad);-webkit-transform: rotate(1.88rad);-o-transform:
+              rotate(1.88rad);-ms-transform: rotate(1.88rad); transform: rotate(1.88rad);
+        width: 38px; height: 27px; left: 273.69px; top: 169.23px;}
+
+      #warped .w3 {-moz-transform: rotate(2.08rad);-webkit-transform: rotate(2.08rad);-o-transform:
+              rotate(2.08rad);-ms-transform: rotate(2.08rad); transform: rotate(2.08rad);
+        width: 13px; height: 27px; left: 273.92px; top: 197.09px;}
+
+      #warped .w4 {-moz-transform: rotate(2.23rad);-webkit-transform: rotate(2.23rad);-o-transform:
+              rotate(2.23rad);-ms-transform: rotate(2.23rad); transform: rotate(2.23rad);
+        width: 22px; height: 27px; left: 256.88px; top: 215.75px;}
+
+      #warped .w5 {-moz-transform: rotate(2.38rad);-webkit-transform: rotate(2.38rad);-o-transform:
+              rotate(2.38rad);-ms-transform: rotate(2.38rad); transform: rotate(2.38rad);
+        width: 11px; height: 27px; left: 247.92px; top: 231.64px;}
+
+      #warped .w6 {-moz-transform: rotate(2.5rad);-webkit-transform: rotate(2.5rad);-o-transform:
+              rotate(2.5rad);-ms-transform: rotate(2.5rad); transform: rotate(2.5rad);
+        width: 15px; height: 27px; left: 232.17px; top: 243.24px;}
+
+      #warped .w7 {-moz-transform: rotate(2.62rad);-webkit-transform: rotate(2.62rad);-o-transform:
+              rotate(2.62rad);-ms-transform: rotate(2.62rad); transform: rotate(2.62rad);
+        width: 11px; height: 27px; left: 219.13px; top: 253.11px;}
+
+      #warped .w8 {-moz-transform: rotate(2.77rad);-webkit-transform: rotate(2.77rad);-o-transform:
+              rotate(2.77rad);-ms-transform: rotate(2.77rad); transform: rotate(2.77rad);
+        width: 26px; height: 27px; left: 190.42px; top: 263.16px;}
+
+      #warped .w9 {-moz-transform: rotate(2.94rad);-webkit-transform: rotate(2.94rad);-o-transform:
+              rotate(2.94rad);-ms-transform: rotate(2.94rad); transform: rotate(2.94rad);
+        width: 13px; height: 27px; left: 173.41px; top: 269.98px;}
+
+      #warped .w10 {-moz-transform: rotate(3.08rad);-webkit-transform: rotate(3.08rad);-o-transform:
+              rotate(3.08rad);-ms-transform: rotate(3.08rad); transform: rotate(3.08rad);
+        width: 21px; height: 27px; left: 147.61px; top: 272.78px;}
+
+      #warped .w11 {-moz-transform: rotate(3.27rad);-webkit-transform: rotate(3.27rad);-o-transform:
+              rotate(3.27rad);-ms-transform: rotate(3.27rad); transform: rotate(3.27rad);
+        width: 25px; height: 27px; left: 117.67px; top: 271.68px;}
+
+      #warped .w12 {-moz-transform: rotate(3.45rad);-webkit-transform: rotate(3.45rad);-o-transform:
+              rotate(3.45rad);-ms-transform: rotate(3.45rad); transform: rotate(3.45rad);
+        width: 20px; height: 27px; left: 93.4px; top: 265.57px;}
+
+      #warped .w13 {-moz-transform: rotate(3.61rad);-webkit-transform: rotate(3.61rad);-o-transform:
+              rotate(3.61rad);-ms-transform: rotate(3.61rad); transform: rotate(3.61rad);
+        width: 17px; height: 27px; left: 73.22px; top: 256.56px;}
+
+      #warped .w14 {-moz-transform: rotate(3.78rad);-webkit-transform: rotate(3.78rad);-o-transform:
+              rotate(3.78rad);-ms-transform: rotate(3.78rad); transform: rotate(3.78rad);
+        width: 23px; height: 27px; left: 49.01px; top: 243.38px;}
+
+      #warped .w15 {-moz-transform: rotate(3.94rad);-webkit-transform: rotate(3.94rad);-o-transform:
+              rotate(3.94rad);-ms-transform: rotate(3.94rad); transform: rotate(3.94rad);
+        width: 17px; height: 27px; left: 33.28px; top: 226.87px;}
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <h1>I'm Filip Loster - hello!</h1>
-    </div>    
+      <h2>Released Projects</h2>
+      <ul>
+        <a href="https://itunes.apple.com/pl/app/zombiebucket/id932424990?mt=8" target="_blank">
+          <li><p>Zombiebucket</p></li>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=pl.submachine.gyro&hl=en" target="_blank">
+          <li><p>GYRO</p></li>
+        </a>
+      </ul>
+      
+      <h2>Game Jams</h2>
+      <ul>
+        <a href="https://globalgamejam.org/2018/games/summah-luv-2003" target="_blank">
+          <li><p>SummahLuv<br/>2003</p></li>
+        </a>
+        <a href="https://itch.io/jam/space-jam-ii/rate/204273" target="_blank">
+          <li><p>Tears<br/>In<br/>Space</p></li>
+        </a>
+        <a href="https://globalgamejam.org/2017/games/funk-fury-attack" target="_blank">
+          <li><p>Funk<br/>Fury<br/>Attack</p></li>
+        </a>
+        <a href="https://aare.itch.io/zombie-skull-seeking-bullet" target="_blank">
+          <li><p>Zombie<br/>Skull<br/>Seeking<br/>Bullet</p></li>
+        </a>
+        <a href="https://aare.itch.io/mini-cave" target="_blank">
+          <li><p>MiniCave</p></li>
+        </a>
+        <a href="https://aare.itch.io/xxx-heart-stock-img-xxx" target="_blank">
+          <li><p>Hearth<br/>Stock<br/>IMG</p></li>
+        </a>
+        <a href="https://aare.itch.io/secret-room-2-the-curse-of-the-tribal-mask" target="_blank">
+          <li><p>The<br/>Room<br/>Of<br/>Mysteries (VR)</p></li>
+        </a>
+        <a href="http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=15039" target="_blank">
+          <li><p>The<br/>Tournament</p></li>
+        </a>
+        <a href="http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=15039" target="_blank">
+        <li><p>Bad<br/>Kitty</p></li>
+        </a>
+      </ul>
+    </div>
+    <div class="column_1">
+      <div id="portrait">
+        <div id='warped'>
+          <span class='w0'>I</span>
+          <span class='w1'>'</span>
+          <span class='w2'>m</span>
+          <span class='w3'> </span>
+          <span class='w4'>F</span>
+          <span class='w5'>i</span>
+          <span class='w6'>l</span>
+          <span class='w7'>i</span>
+          <span class='w8'>p</span>
+          <span class='w9'> </span>
+          <span class='w10'>L</span>
+          <span class='w11'>o</span>
+          <span class='w12'>s</span>
+          <span class='w13'>t</span>
+          <span class='w14'>e</span>
+          <span class='w15'>r</span>
+        </div>
+
+        <ul class="skills">
+          <li>Unity</li>
+          <li>Android</li>
+          <li>Blockchain</li>
+          <li>iOS</li>
+          <li>Blockchain</li>
+          <li>C#</li>
+          <li>Java</li>
+          <li>Haxe</li>
+          <li>Typescript</li>
+          <li>C++</li>
+        </ul>
+      </div>
+
+      <br/>
+      <h2>Currently Working On</h2>
+      <ul>
+        <li>
+          <p>Unhatched</p>
+          <!-- <a href="www.unhatched-game.com">link</a> -->
+        </li>
+      </ul>
+
+      <h2>Contact Me</h2>
+      <ul>
+        <li>Twitter</li>
+        <li>Github</li>
+        <li>Email</li>
+        <li>Phone</li>
+      </ul>
+    </div>
   </body>
 </html>
