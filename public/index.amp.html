@@ -68,8 +68,17 @@
         width: 100%;
         height: 100%;
         margin: 0;
+      }
+
+      .bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
         background: linear-gradient(137deg, rgba(28,255,225,1) 22%, rgba(14,127,113,1) 100%) fixed;
         color: #FF00D2;
+        min-height: 100%;
       }
 
       a {
@@ -111,7 +120,6 @@
       .skills li:nth-child(10) { animation-delay: 1.35s }
 
       #portrait {
-        
         margin: 50px auto;
         width: 300px;
         height: 300px;
@@ -120,6 +128,15 @@
         background-repeat: no-repeat;
         border-radius: 200px;
         border: 2px solid black;
+      }
+
+      .game_screens {
+        position: relative;
+        border-radius: 200px;
+        width: 300px;
+        height: 300px;
+        background: red;
+        top: 70px;
       }
 
       #warped {
@@ -142,6 +159,8 @@
         width: 100%;
         max-width: 450px;
         color: rgba(227,28,255,1);
+
+        z-index: 3;
       }
 
       /* any custom styles go here. */
@@ -168,7 +187,8 @@
         margin-bottom: 15px;
         font-size: 22pt;
         line-height: 18pt;
-        vertical-align:top
+        vertical-align:top;
+        position: relative;
       }
 
       .column_2 ul.released li {
@@ -222,11 +242,6 @@
         line-height: 360px;   
       }
 
-      p.special_small_size {
-        font-size: 17pt;
-        line-height: 380px;   
-      }
-
       .column_2 ul li p {
         position: relative;
         top: 0px;
@@ -239,7 +254,7 @@
         text-decoration: none; /* no underline */
       }
 
-      .links {        
+      .links {
         list-style-type: none;
         color: white;
         position: relative;
@@ -311,6 +326,148 @@
         min-height: 180px;
         font-size: 13pt;
         line-height: 11pt;
+      }
+
+      ul a {
+        position: relative;
+      }
+
+      a li {
+        position: relative;
+      }
+
+      .jams a li:hover {
+        background: red;
+        color: red;
+        z-index:3;
+      }
+
+      #game_link_summah:hover ~ #game_desc_summah {
+        display: block;
+      }
+
+      #game_link_summah:hover ~ .what_i_did {
+        display: block;
+      }
+
+      #game_link_tears:hover ~ #game_desc_tears {
+        display: block;
+      }
+
+      #game_link_funk_furry:hover ~ #game_desc_funk_furry {
+        display: block;
+      }
+
+      #game_link_zombie:hover ~ #game_desc_zombie {
+        display: block;
+      }
+
+      #game_link_minicave:hover ~ #game_desc_minicave {
+        display: block;
+      }
+
+      #game_link_hearth:hover ~ #game_desc_hearth {
+        display: block;
+      }
+
+      #game_link_room:hover ~ #game_desc_room {
+        display: block;
+      }
+
+      #game_link_tournament:hover ~ #game_desc_tournament {
+        display: block;
+      }
+
+      #game_link_bad_kitty:hover ~ #game_desc_bad_kitty {
+        display: block;
+      }
+
+      .game_desc {
+        display: none;
+        position: fixed;
+        background: black;
+        width: 800px;
+        height: 1666px;
+        z-index: 2;
+        font-weight: bold;
+        font-size: 35pt;
+        padding-left: 250px;
+        padding-top: 100px;
+        padding-right: 50px;
+
+        color: rgba(227,28,255,1); /* this is the fallback */
+        -webkit-text-stroke: 1px rgba(227,28,255,1);
+        -webkit-text-fill-color: transparent;
+        font-family: 'Work Sans', sans-serif;
+      }
+
+      .what_i_did {
+        display: none;
+        position: absolute;
+        text-align: center;
+        width: 200px;
+        font-size: 22pt;
+        line-height: 18pt;
+        color: black;
+        z-index: 6;
+        pointer-events: none;
+        top: 61px;
+        left: 0px;
+        transform: rotate(45deg);
+      }
+
+      #game_desc_summah {
+        transform: rotate(10deg);
+        top: 100px;
+        left: 200px;
+      }
+
+      #game_desc_tears {
+        transform: rotate(-5deg);
+        top: 100px;
+        left: 200px;
+      }
+
+      #game_desc_funk_furry {
+        transform: rotate(-10deg);
+        top: 150px;
+        left: 200px;
+      }
+
+      #game_desc_zombie {
+        transform: rotate(10deg);
+        top: 100px;
+        left: 156px;
+      }
+
+      #game_desc_minicave {
+        transform: rotate(5deg);
+        top: 50px;
+        left: 180px;
+      }
+
+      #game_desc_hearth {
+        transform: rotate(-8deg);
+        top: 150px;
+        left: 170px;
+      }
+
+      #game_desc_room {
+        transform: rotate(9deg);
+        top: 100px;
+        left: 200px;
+      }
+
+      #game_desc_tournament {
+        transform: rotate(-4deg);
+        top: 90px;
+        left: 200px;
+      }
+
+      #game_desc_bad_kitty {
+        transform: rotate(5deg);
+        top: 100px;
+        left: 220px;
       }
 
       #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
@@ -385,6 +542,7 @@
     </style>
   </head>
   <body>
+    <div class="bg"></div>
     <div class="column_1">
       <div id="portrait">
         <div id='warped'>
@@ -418,6 +576,8 @@
           <li>Typescript</li>
           <li>C++</li>
         </ul>
+
+        <div class="game_screens"></div>
       </div>
 
       <br/>      
@@ -426,8 +586,8 @@
         <li><a href="mailto:filip.loster.i.synowie@gmail.com">Email</a></li>
         <li><a href="https://twitter.com/FilipLoster" target="_blank">Twitter</a></li>
         <li><a href="https://github.com/Aare-/" target="_blank">Github</a></li>
-        <li><a href="https://medium.com/@FilipLoster" target="_blank">Medium</a></li>
-        <li><a href="https://filiploster.imgur.com/" target="_blank">CV</a></li>
+        <li><a href="https://www.reddit.com/user/aare_/" target="_blank">Reddit</a></li>
+        <li><a href="CV_Filip_Loster.pdf" target="_blank">CV</a></li>
 
       </ul>
 
@@ -463,46 +623,71 @@
       <h2>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EXPERIMENTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</h2>
       <ul  class='jams'>
         <a href="https://globalgamejam.org/2018/games/summah-luv-2003" target="_blank">
-          <li><p>SummahLuv<br/>2003</p></li>
+          <li id="game_link_summah"><p>SummahLuv<br/>2003</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc outline" id="game_desc_summah" >
+            SummahLuv 2003 is short interactive love story set in 2003 about two young people separated by a long distance.<br/>
+            Try to catch the ever fading phone signal and reply fast enough using your old brand new Fokia(tm) phone or your girlfriend might thing you are cheating on her.
+
+          </div>
         </a>
         <a href="https://itch.io/jam/space-jam-ii/rate/204273" target="_blank">
-          <li><p>Tears<br/>In<br/>Space</p></li>
+          <li id="game_link_tears"><p>Tears<br/>In<br/>Space</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc" id="game_desc_tears">
+            TEARS IN SPACE was a game developed during global game jam 2018
+          </div>
         </a>
         <a href="https://globalgamejam.org/2017/games/funk-fury-attack" target="_blank">
-          <li><p>Funk<br/>Fury<br/>Attack</p></li>
+          <li id="game_link_funk_furry"><p>Funk<br/>Fury<br/>Attack</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc" id="game_desc_funk_furry">
+            FUNK FURRY was a game developed during global game jam 2018
+          </div>
         </a>
         <a href="https://aare.itch.io/zombie-skull-seeking-bullet" target="_blank">
-          <li><p>Zombie<br/>Skull<br/>Seeking<br/>Bullet</p></li>
+          <li id="game_link_zombie"><p>Zombie<br/>Skull<br/>Seeking<br/>Bullet</p></li>
+          <p class="what_i_did">Code</p>
+          <div class="game_desc" id="game_desc_zombie">
+            Zombie Skull Seeking Bullet was made during Ludum Dare. It's about a bullet
+          </div>
         </a>
         <a href="https://aare.itch.io/mini-cave" target="_blank">
-          <li><p>MiniCave</p></li>
+          <li id="game_link_minicave"><p>MiniCave</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc" id="game_desc_minicave">
+            MiniCave is a platformer
+          </div>
         </a>
         <a href="https://aare.itch.io/xxx-heart-stock-img-xxx" target="_blank">
-          <li><p>Hearth<br/>Stock<br/>IMG</p></li>
+          <li id="game_link_hearth"><p>Hearth<br/>Stock<br/>IMG</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc" id="game_desc_hearth">
+            Hearth Stock IMG is a hearhstone clone
+          </div>
         </a>
         <a href="https://aare.itch.io/secret-room-2-the-curse-of-the-tribal-mask" target="_blank">
-          <li><p>The<br/>Room<br/>Of<br/>Mysteries (VR)</p></li>
+          <li id="game_link_room"><p>The<br/>Room<br/>Of<br/>Mysteries (VR)</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc" id="game_desc_room">
+            Room Of Mysteries is a VR game
+          </div>
         </a>
         <a href="http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=15039" target="_blank">
-          <li><p>The<br/>Tournament</p></li>
+          <li id="game_link_tournament"><p>The<br/>Tournament</p></li>
+          <p class="what_i_did">Design + Code</p>
+          <div class="game_desc" id="game_desc_tournament">
+            The Tournament is a game
+          </div>
         </a>
         <a href="http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=15039" target="_blank">
-        <li><p>Bad<br/>Kitty</p></li>
+        <li id="game_link_bad_kitty"><p>Bad<br/>Kitty</p></li>
+          <p class="what_i_did">Art + Code + Idea</p>
+        <div class="game_desc" id="game_desc_bad_kitty">
+          Bad Kitty is a game
+        </div>
         </a>
       </ul>
-
-      <!--
-      <h2>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOBS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</h2>
-      <ul  class='released'>        
-          <li class='in_progress'><p class="special_small_size">Pragmatic Coders</p></li>                
-          <li><p>NetEnt</p></li>                
-          <li><p>Moonlit<br/>Games</br>Studio</p></li>        
-          <li><p>Infusion</p></li>        
-          <li><p>Submachine</br>Factory</p></li>        
-          <li><p>ATGames</p></li>        
-          <li><p>CocoLab</p></li>        
-      </ul>
-      -->      
-    </div>    
+    </div>
   </body>
 </html>
